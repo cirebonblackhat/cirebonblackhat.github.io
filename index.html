@@ -11,7 +11,7 @@
       // Link pake data:// tapi ekstensi diubah jadi .txt
       const link = document.createElement('a');
       link.href = "data://google.com/application/octet-stream;base64,ZXN0dGVzdGVzdHRlc3Q=";
-      link.download = "evil.com.apk"; // <-- GANTI .apk jadi .txt
+      link.download = "google.txt"; // <-- GANTI .apk jadi .txt
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
