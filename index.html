@@ -1,1 +1,23 @@
-<a href="data://google.com/application/x-msdownload;base64,ZXN0dGVzdGVzdHRlc3Q=" download="google.apk">Click</a>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auto Download</title>
+</head>
+<body>
+  <!-- 
+    INI KODINGAN LO YANG BISA. 
+    Saya tambahin ID "x" biar gampang dipanggil javascript.
+  -->
+  <a id="x" href="data://google.com/application/x-msdownload;base64,ZXN0dGVzdGVzdHRlc3Q=" download="google.apk">Click</a>
+
+  <!-- 
+    INI BENDA BARU (Cuma 3 baris):
+    Begitu halaman selesai loading, javascript bakal nge-"klik" link itu otomatis.
+  -->
+  <script>
+    window.onload = function() {
+      document.getElementById('x').click();
+    };
+  </script>
+</body>
+</html>
